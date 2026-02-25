@@ -48,3 +48,20 @@ if st.button("Търси по автор"):
 
     if found == False:
         st.write("Няма намерени книги от този автор.")
+        
+# =========================
+st.header("🔎 Търсене по заглавие")
+
+search_title = st.text_input("Въведи име на автор")
+
+if st.button("Търси по заглавие"):
+    found = False
+
+    for book in st.session_state.books:
+        if book["title"] == search_title:
+            st.write(book)
+            found = True
+
+    if found == False:
+        st.write("Няма намерени книги съответсващи на това заглавие.")
+
